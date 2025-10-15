@@ -7,7 +7,7 @@ import os
 st.set_page_config(page_title="Visual Product Matcher", layout="wide", page_icon="🛍")
 
 # ---------- LOAD DATA ----------
-json_file = "products.json"  # make sure this file is in the same folder as app.py
+json_file = "products.json"
 
 if not os.path.exists(json_file):
     st.error(f"Error: {json_file} not found. Please make sure it exists in the same folder as app.py.")

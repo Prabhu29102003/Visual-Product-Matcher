@@ -1,8 +1,7 @@
 LIVE DEMO:
 https://visual-appuct-matcher-cjzowkzprbr5gtpur9iz5p.streamlit.app/
-Sure! Here’s a clear, professional **README** for your **Visual Product Matcher** project:
 
----
+
 
 # 🛍 Visual Product Matcher
 

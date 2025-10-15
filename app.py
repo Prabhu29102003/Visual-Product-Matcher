@@ -1,12 +1,19 @@
 import streamlit as st
 import json
 import re
+import os
 
 # ---------- PAGE CONFIG ----------
 st.set_page_config(page_title="Visual Product Matcher", layout="wide", page_icon="🛍")
 
 # ---------- LOAD DATA ----------
-with open("products.json", "r") as f:
+json_file = "products.json"  # make sure this file is in the same folder as app.py
+
+if not os.path.exists(json_file):
+    st.error(f"Error: {json_file} not found. Please make sure it exists in the same folder as app.py.")
+    st.stop()
+
+with open(json_file, "r") as f:
     products = json.load(f)
 
 # ---------- STYLING ----------
@@ -75,24 +82,19 @@ st.title("🛍 Visual Product Matcher")
 # --- Search / Upload Section ---
 st.markdown('<div class="search-section">', unsafe_allow_html=True)
 
-# Upload Image
 uploaded_file = st.file_uploader("", type=["jpg","jpeg","png"])
 uploaded_preview = None
 if uploaded_file:
     uploaded_preview = uploaded_file
     st.image(uploaded_preview, width=220, caption="Uploaded Image Preview")
 
-# Paste URL
 url_input = st.text_input("Paste Image URL")
 url_preview = None
 if url_input:
     url_preview = url_input
     st.image(url_preview, width=220, caption="URL Image Preview")
 
-# Decide which query to use
 query = uploaded_file.name if uploaded_file else url_input if url_input else None
-
-# Search Button
 search_clicked = st.button("Search Similar Products")
 st.markdown("</div>", unsafe_allow_html=True)
 

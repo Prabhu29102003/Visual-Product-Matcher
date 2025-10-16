@@ -1,4 +1,4 @@
-[🔗 Open Live App](https://github.com/TechiePrabhu/Visual-Product-Matcher)
+[🔗 Open Live App](https://visual-appuct-matcher-cjzowkzprbr5gtpur9iz5p.streamlit.app/)
 
 
 
